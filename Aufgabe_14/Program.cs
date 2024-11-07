@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Aufgabe_14
 {
@@ -12,16 +13,35 @@ namespace Aufgabe_14
         {
             Console.WriteLine("Prüfen, ob es sich bei einem Jahr um ein Schaltjahr handelt.");
             Console.WriteLine("************************************************************");
-            Console.ReadKey();
-            Console.WriteLine("Eingabe Jahr: ");
-            string eingabe= Console.ReadLine();
-            int antwort= Convert.ToInt32(eingabe);
+            Console.Write("Eingabe Jahr (q to quit): ");
+            string eingabe = Console.ReadLine();
+            int ant = Convert.ToInt32(eingabe);
+
+            if (ant % 4 == 0 || ant % 100 == 0)
+            {
+                if (ant % 400 == 0)
+                {
+
+                    Console.WriteLine("Das Jahr " + ant + " ist KEIN Schaltjahr.");
+                }
+                else
+                {
+                    Console.WriteLine("Das Jahr " + ant + " ist ein Schaltjahr.");
+                    Console.ReadKey();
+
+                }
+                Console.ReadKey();
+
+            }
+            else
+            {
+                Console.WriteLine("Das Jahr " + ant + " ist KEIN Schaltjahr.");
+            }
             
-        }
-
-        static void berechnung(string[] args)
-        {
+            // "q to quit" noch nicht gemacht 
 
         }
-    }
+    }   
 }
+
+    
