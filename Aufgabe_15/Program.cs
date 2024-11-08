@@ -10,21 +10,51 @@ namespace Aufgabe_15
     {
         static void Main(string[] args)
         {
-            //Frage
-            Console.Write("Breite des Stammes? ");
-            string frage1= Console.ReadLine();
-            int ant1= Convert.ToInt32(frage1);
-            Console.Write("Höhe des Stammes? ");
-            string frage2= Console.ReadLine();
-            int ant2 = Convert.ToInt32(frage1);
-            Console.Write("Höhe der Krone? ");
-            string frage3 = Console.ReadLine();
-            int ant3 = Convert.ToInt32(frage1);
-            int i=1;
+            Console.Write("Geben Sie die Breite des Stammes ein: ");
+            int stammBreite = int.Parse(Console.ReadLine());
 
-           
+            Console.Write("Geben Sie die Höhe des Stammes ein: ");
+            int stammHöhe = int.Parse(Console.ReadLine());
 
-            
+            Console.Write("Geben Sie die Höhe der Krone ein: ");
+            int kroneHöhe = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < kroneHöhe; i++)
+            {
+                int leerzeichen = kroneHöhe - i - 1;
+                for (int j = 0; j < leerzeichen; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = 0; j < (2 * i + 1); j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 0; i < stammHöhe; i++)
+            {
+                int stamm_leerzeichen = (kroneHöhe - 1) - (stammBreite / 2);
+                for (int k = 0; k < stamm_leerzeichen; k++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = 0; j < stammBreite; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
+
+
+
+
+
         }
     }
 }
